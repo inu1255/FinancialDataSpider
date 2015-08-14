@@ -1,0 +1,20 @@
+create table bankproduct (
+    id varchar(16) primary key,
+    name varchar(256) not null,
+    profit float default 0,
+    dayLimit int default 0,
+    minMoney float default 0,
+    moneyType varchar(32) default '人民币',
+    beginDate varchar(32),
+    endDate varchar(32),
+    area varchar(512),
+    company varchar(64),
+    profitType varchar(64),
+    increaseMoney float default 0,
+    profitDate varchar(32),
+    riskLevel varchar(32),
+    profitInstruction varchar(1024),
+    earlyTerminateCondition varchar(1024),
+    scope varchar(1024),
+    riskWarning varchar(1024)
+)
