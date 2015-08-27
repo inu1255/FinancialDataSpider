@@ -9,7 +9,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.omg.CORBA.PUBLIC_MEMBER;
 
-public class BankSpider extends JsonSpider {
+public class BankSpider extends Spider {
 	@Override
 	public void deal(String json){
 		try {
@@ -41,7 +41,7 @@ public class BankSpider extends JsonSpider {
 		}
 	}
 }
-class OneBankSpider extends JsonSpider{
+class OneBankSpider extends Spider{
 	private String id = "";
 	public void openUrl(String url,String code) {
 		id = code;
