@@ -114,13 +114,13 @@ public class Opener {
 		}
 		byte[] b = EntityUtils.toByteArray(entity);
 		String tmp = new String(b);
-		Pattern p = Pattern.compile("<meta[^>]+charset=([\\w\\-]+)");
+		Pattern p = Pattern.compile("<meta[^>]+charset=[\"']?([\\w\\-]+)");
 		Matcher m = p.matcher(tmp);
 		if(m.find()){
             String res = new String(b,m.group(1));//这里写转换后的编码方式
             return res;
 		}
-		return tmp;
+		return new String(b,"UTF-8");
 	}
 	private static void setCookieStore(HttpResponse httpResponse) {
 		Header[] headers = httpResponse.getHeaders("Set-Cookie");

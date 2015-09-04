@@ -21,7 +21,9 @@ import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationExceptio
 
 public class Spider {
 	protected String url = "";
+	public int count = 0;
 	public void openUrl(String url) {
+		++count;
 		this.url = url;
 		String string;
 		try {
